@@ -238,7 +238,7 @@ const CryptTool = (function () {
             {name: 'PBKDF2'}, // we use PBKDF2 for key derivation
             false, // the key may not be exported
             ['deriveKey'] // we may only use it for key derivation
-        ).catch(Alert.showError);
+        );
 
         // derive a stronger key for use with AES
         return window.crypto.subtle.deriveKey(
@@ -255,7 +255,7 @@ const CryptTool = (function () {
             },
             false, // the key may not be exported
             ['encrypt', 'decrypt'] // we may only use it for en- and decryption
-        ).catch(Alert.showError);
+        );
     }
 
     /**
