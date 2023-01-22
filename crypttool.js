@@ -209,6 +209,7 @@ const CryptTool = (function () {
      */
     async function deriveKey(key, password, spec)
     {
+        spec = spec[0];
         let keyArray = stringToArraybuffer(key);
         if (password.length > 0) {
             // version 1 pastes did append the passwords SHA-256 hash in hex
