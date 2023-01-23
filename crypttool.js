@@ -271,6 +271,7 @@ const CryptTool = (function () {
      */
     function cryptoSettings(adata, spec)
     {
+        spec[0][0] = atob(spec[0][0]);
         return {
             name: 'AES-' + spec[0][6].toUpperCase(), // can be any supported AES algorithm ("AES-CTR", "AES-CBC", "AES-CMAC", "AES-GCM", "AES-CFB", "AES-KW", "ECDH", "DH" or "HMAC")
             iv: stringToArraybuffer(spec[0][0]), // the initialization vector you used to encrypt
