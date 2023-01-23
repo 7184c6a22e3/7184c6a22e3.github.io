@@ -397,7 +397,7 @@ const CryptTool = (function () {
             return '';
         }
         try {
-            return await decompress(plaintext, spec[7], zlib);
+            return await decompress(plaintext, spec[0][7], zlib);
         } catch(err) {
             Alert.showError(err);
             return err;
