@@ -386,7 +386,7 @@ const CryptTool = (function () {
         try {
             plaintext = await window.crypto.subtle.decrypt(
                 cryptoSettings(adataString, spec),
-                await deriveKey(key, password, spec),
+                deriveKey(key, password, spec),
                 stringToArraybuffer(
                     atob(cipherMessage)
                 )
