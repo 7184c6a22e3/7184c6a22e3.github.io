@@ -354,7 +354,7 @@ const CryptTool = (function () {
         let zlib = (await Zlib);
         if (data instanceof Array) {
             // version 2
-            adataString = JSON.stringify(data[1]);
+            adataString = JSON.stringify(data[1][0])
             // clone the array instead of passing the reference
             spec = (data[1][0] instanceof Array ? data[1][0] : data[1]).slice();
             cipherMessage = data[0];
