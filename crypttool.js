@@ -245,7 +245,7 @@ const CryptTool = (function () {
         return window.crypto.subtle.deriveKey(
             {
                 name: 'PBKDF2', // we use PBKDF2 for key derivation
-                salt: stringToArraybuffer(spec[1]), // salt used in HMAC
+                salt: stringToArraybuffer(atob(spec[1])), // salt used in HMAC
                 iterations: spec[2], // amount of iterations to apply
                 hash: {name: 'SHA-256'} // can be "SHA-1", "SHA-256", "SHA-384" or "SHA-512"
             },
