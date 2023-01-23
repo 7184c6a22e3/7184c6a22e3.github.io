@@ -144,7 +144,7 @@ const CryptTool = (function () {
                 if (typeof zlib === 'undefined') {
                     throw 'Error decompressing paste, due to missing WebAssembly support.'
                 }
-                data = zlib.inflate(
+                data = zlib.Inflate(
                     new Uint8Array(data)
                 ).buffer;
             }
