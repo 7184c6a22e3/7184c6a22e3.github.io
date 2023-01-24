@@ -19,9 +19,11 @@ async function ImportPasteData() {
     .then(res => res.json())
     .then(data => { fetchData = data });
     
-    paste = await CryptTool.decipher(key, document.getElementById("textBoxPass").value, FormatPasteData(fetchData));
+    var decrypted = await CryptTool.decipher(key, document.getElementById("textBoxPass").value, FormatPasteData(fetchData));
     
-    return JSON.parse(paste).paste;
+    var paste = JSON.parse(decrypted).paste
+    
+    return paste;
 }
 
 // Vault Manager
