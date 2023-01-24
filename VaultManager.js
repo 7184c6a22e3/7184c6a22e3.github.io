@@ -9,7 +9,7 @@ async function ImportPasteData() {
     var fetchUrl = "https://privatebin.net/?pasteid=" + url[0];
     var key = CryptTool.base58decode(url[1]).padStart(32, '\u0000');
     
-    fetch(fetchUrl, {
+    await fetch(fetchUrl, {
         method: 'GET',
         headers: {
             'X-Requested-With': 'JSONHttpRequest',
