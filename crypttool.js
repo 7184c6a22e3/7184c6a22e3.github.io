@@ -352,7 +352,7 @@ const CryptTool = (function () {
     me.decipher = async function(key, password, data)
     {
         let adataString, spec, cipherMessage, plaintext;
-        //let zlib = (await zlib);
+        zlib = (await zlib);
         if (data instanceof Array) {
             // version 2
             adataString = JSON.stringify(data[1][0])
