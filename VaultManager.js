@@ -3,7 +3,7 @@ function FormatPasteData(data) {
     return [data.ct, [data.adata]]
 }
 
-function ImportPasteData() {
+async function ImportPasteData() {
     var fetchData;   
     var url = document.getElementById("textBoxID").value.split("#");
     var fetchUrl = "https://privatebin.net/?pasteid=" + url[0];
