@@ -1,4 +1,30 @@
+// Vault Importer
+function FormatPasteData(data) {
+    return [data.ct, [data.adata]]
+}
 
+function ImportPasteData() {
+    var fetchData;   
+    var url = document.getElementById("textBoxID").value.split("#");
+    var fetchUrl = "https://privatebin.net/?pasteid=" + url[0];
+    var key = CryptTool.base58decode(url[1]).padStart(32, '\u0000');
+    
+    fetch(fetchUrl, {
+        method: 'GET',
+        headers: {
+            'X-Requested-With': 'JSONHttpRequest',
+            'Content-Type': 'application/json',
+        },
+    })
+    .then(res => res.json())
+    .then(data => { fetchData = data });
+    
+    paste = await CryptTool.decipher(key, document.getElementById("textBoxPass").value, FormatPasteData(fetchData));
+    
+    return JSON.parse(paste).paste;
+}
+
+// Vault Manager
 function isVaultEmpty() {
     if(localStorage.getItem("vault") == null)
         return true;
@@ -12,31 +38,7 @@ function VaultReset() {
 }
 
 function VaultLoad() {
-/* 
-//PrivateBin 
-function FormatPasteData(data) {
-    return [data.ct, [data.adata]]
-}
 
-var objRes;
-var url = "https://privatebin.net/?pasteid=24c21fb220c831e8";
-
-fetch(url, {
-  method: 'GET',
-  headers: {
-    'X-Requested-With': 'JSONHttpRequest',
-    'Content-Type': 'application/json',
-  },
-})
-.then(res => res.json())
-.then(data => { objRes = data }) 
-
-//Key
-key = CryptTool.base58decode("9Zkfxbc84AsViiDjkaVniMVmsBHpVxSns8Kn9fsztjp").padStart(32, '\u0000')
-
-// Decipher
-CryptTool.decipher(key, "", FormatPasteData(objRes))
-*/
 
     console.log("Loading Vault...");
 
