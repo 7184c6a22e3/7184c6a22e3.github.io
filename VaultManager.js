@@ -96,5 +96,7 @@ async function HttpImport(uri) {
 }
 
 async function onBtnImportClick() {
-    VaultInsert(await HttpImport(document.getElementById("textBoxURL").value));
+    var res;
+    await ImportPasteData().then(paste => { res = paste });
+    VaultInsert(res);
 }
