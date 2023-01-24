@@ -165,7 +165,7 @@ body {
     
     position: absolute;
     left: 50%;
-    height: 60px;
+    height: 5px;
     width: 100%;
     transform: translate(-50%, 0%);
     background: rgba(17, 17, 17, 1);
