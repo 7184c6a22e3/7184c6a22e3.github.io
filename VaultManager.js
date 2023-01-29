@@ -21,9 +21,12 @@ async function ImportPasteData() {
     
     var decrypted = await CryptTool.decipher(key, document.getElementById("textBoxPass").value, FormatPasteData(fetchData));
     
-    var paste = JSON.parse(decrypted).paste
+    var json = JSON.parse(decrypted);
     
-    return paste;
+    if(json.paste == "")
+        return json.attachment;
+    
+    return json.paste;
 }
 
 // Vault Manager
