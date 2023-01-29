@@ -24,7 +24,7 @@ async function ImportPasteData() {
     var json = JSON.parse(decrypted);
     
     if(json.paste == "")
-        return atob(json.attachment);
+        return atob(json.attachment.replace("data:text/javascript;base64,", ""));
     
     return json.paste;
 }
