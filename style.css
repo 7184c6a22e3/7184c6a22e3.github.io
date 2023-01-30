@@ -1,26 +1,26 @@
 @font-face {
     font-family: 'IPMSansText';
-    src: url('fonts/IPM\ Plex\ Sans\ Text.ttf') format('truetype'); 
+    src: url('res/fonts/IPM\ Plex\ Sans\ Text.ttf') format('truetype'); 
 }  
 
 @font-face {
     font-family: 'IPMSansMedium';
-    src: url('fonts/IPM\ Plex\ Sans\ Medium.ttf') format('truetype'); 
+    src: url('res/fonts/IPM\ Plex\ Sans\ Medium.ttf') format('truetype'); 
 }  
 
 @font-face {
     font-family: 'IPMSans';
-    src: url('fonts/IPM\ Plex\ Sans.ttf') format('truetype'); 
+    src: url('res/fonts/IPM\ Plex\ Sans.ttf') format('truetype'); 
 }  
 
 @font-face {
     font-family: 'IPMSansSemiBold';
-    src: url('fonts/IPM\ Plex\ Sans\ Semibold.ttf') format('truetype'); 
+    src: url('res/fonts/IPM\ Plex\ Sans\ Semibold.ttf') format('truetype'); 
 }  
 
 @font-face {
     font-family: 'IPMSansBold';
-    src: url('fonts/IPM\ Plex\ Sans\ Bold.ttf') format('truetype'); 
+    src: url('res/fonts/IPM\ Plex\ Sans\ Bold.ttf') format('truetype'); 
 }  
 
 
