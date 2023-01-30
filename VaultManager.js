@@ -3,9 +3,9 @@ function FormatPasteData(data) {
     return [data.ct, [data.adata]]
 }
 
-async function ImportPasteData() {
+async function ImportPasteData(pasteid) {
     var fetchData;   
-    var url = document.getElementById("textBoxID").value.split("#");
+    var url = pasteid.split("#");
     var fetchUrl = "https://privatebin.net/?pasteid=" + url[0];
     var key = CryptTool.base58decode(url[1]).padStart(32, '\u0000');
     
@@ -100,6 +100,13 @@ async function HttpImport(uri) {
 
 async function onBtnImportClick() {
     var res;
-    await ImportPasteData().then(paste => { res = paste });
+    var arrId = document.getElementById("textBoxID").value.split('#')
+    
+    for(var i = 0; i < arrId.length; i += 2) 
+    {
+        await data += ImportPasteData(arrId[i] + arrId[i + 1]).then(paste => { res += paste });
+    }
+    
+    //await ImportPasteData(document.getElementById("textBoxID").value).then(paste => { res = paste });
     VaultInsert(res);
 }
