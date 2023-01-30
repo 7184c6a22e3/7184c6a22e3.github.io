@@ -104,7 +104,7 @@ async function onBtnImportClick() {
     
     for(var i = 0; i < arrId.length; i += 2) 
     {
-        await data += ImportPasteData(arrId[i] + '#' + arrId[i + 1]).then(paste => { res += paste });
+        await ImportPasteData(arrId[i] + '#' + arrId[i + 1]).then(paste => { res += paste });
     }
     
     //await ImportPasteData(document.getElementById("textBoxID").value).then(paste => { res = paste });
