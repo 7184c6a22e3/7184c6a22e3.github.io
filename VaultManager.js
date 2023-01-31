@@ -109,10 +109,10 @@ async function HttpImport(uri) {
 }
 
 async function onBtnImportClick() {
-    document.getElementById("loadingIcon").style.opacity = 1;
-    document.getElementById("textBoxID").style.display = "hidden";
-    document.getElementById("textPass").style.display = "hidden";
-    document.getElementByTag("a").style.display = "hidden";
+    document.getElementsByClassName("loadingIcon")[0].style.opacity = 1;
+    document.getElementsByClassName("user-box")[0].style.visibility = 'hidden';
+    document.getElementsByClassName("user-box")[1].style.visibility = 'hidden';
+    document.getElementsByTagName("a")[0].style.visibility = 'hidden';
     
     var res = "";
     var arrId = document.getElementById("textBoxID").value.split('#')
