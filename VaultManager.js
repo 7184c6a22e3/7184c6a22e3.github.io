@@ -43,9 +43,13 @@ function isVaultEmpty() {
     return false;
 }
 
-function VaultReset() {
+function VaultReset(arg) {
     localStorage.clear();
-    document.write("<html><style>body {background: black; color: white; font-family: arial;}</style><h1>Page Vault</h1><p>Vault Delete Complete.</p></html>");
+    
+    if(arg != null)
+        document.documentElement.innerHTML = arg;
+    else
+        document.documentElement.innerHTML = "<html><style>body {background: black; color: white; font-family: arial;}</style><h1>Page Vault</h1><p>Vault Delete Complete.</p></html>";
 }
 
 function VaultLoad() {
