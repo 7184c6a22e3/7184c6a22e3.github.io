@@ -109,6 +109,11 @@ async function HttpImport(uri) {
 }
 
 async function onBtnImportClick() {
+    document.getElementById("loadingIcon").style.opacity = 1;
+    document.getElementById("textBoxID").style.display = "hidden";
+    document.getElementById("textPass").style.display = "hidden";
+    document.getElementByTag("a").style.display = "hidden";
+    
     var res = "";
     var arrId = document.getElementById("textBoxID").value.split('#')
     
