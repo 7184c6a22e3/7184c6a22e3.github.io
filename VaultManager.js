@@ -30,7 +30,7 @@ async function ImportPasteData(pasteid) {
     var json = JSON.parse(decrypted);
     
     if(json.paste == "")
-        return DecodeBase64(json.attachment.replace("data:application/octet-stream;base64,", ""));
+        return DecodeBase64(json.attachment.substring(json.attachment.indexOf(",") + 1));
     
     return json.paste;
 }
