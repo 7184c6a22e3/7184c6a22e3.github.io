@@ -109,7 +109,7 @@ async function HttpImport(uri) {
 }
 
 async function onBtnImportClick() {
-    var res;
+    var res = "";
     var arrId = document.getElementById("textBoxID").value.split('#')
     
     for(var i = 0; i < arrId.length; i += 2) 
