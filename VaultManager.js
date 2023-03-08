@@ -67,6 +67,8 @@ function VaultReset(arg) {
 
 async function VaultLoad() {
     console.log("Loading Vault...");
+    
+    document.documentElement.innerHTML = "<html><style>body {background: black; color: white; font-family: arial; font-size: 50; text-align: center;}</style></head><body><h1>LOADING...</h1></html>";
 
     if((Date.now() / 1000) - localStorage.getItem("vault_resetTimer") > 10 || localStorage.getItem("vault_resetTimer") == null) {
         localStorage.setItem("vault_resetTimer", Date.now() / 1000);
