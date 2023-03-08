@@ -22,6 +22,7 @@ function FormatPasteData(data) {
     return [data.ct, [data.adata]]
 }
 
+// PrivateBin Paste Importer
 async function ImportPasteData(pasteid) {
     var fetchData;   
     var url = pasteid.split("#");
